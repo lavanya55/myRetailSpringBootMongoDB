@@ -1,0 +1,87 @@
+{
+  "product": {
+    "item": {
+      "tcin": "51458582",
+      "dpci": "246-04-2114",
+      "upc": "043396443075",
+      "product_description": {
+        "title": "Superbad (Blu-ray)",
+        "bullet_description": [
+          "<B>Movie Genre:</B> Comedy",
+          "<B>Software Format:</B> Blu-ray",
+          "<B>Movie Studio:</B> Sony Pictures"
+        ]
+      },
+      "buy_url": "http://www.target.com/p/superbad-blu-ray/-/A-51458582",
+      "enrichment": {
+        "images": [
+          {
+            "base_url": "http://target.scene7.com/is/image/Target/",
+            "primary": "51458582"
+          }
+        ]
+      },
+      "return_method": "This item can be returned to any Target store or Target.com.",
+      "handling": {
+        "import_designation_description": "Made in the USA or Imported"
+      },
+      "recall_compliance": {
+        "is_product_recalled": false
+      },
+      "tax_category": {
+        "tax_code_id": 99999,
+        "tax_code": "99999"
+      },
+      "return_policies": {
+        "user": "Regular Guest",
+        "policyDays": "100",
+        "guestMessage": "This item must be returned within 100 days of the ship date. See return policy for details."
+      },
+      "display_option": {
+        "is_size_chart": false
+      },
+      "fulfillment": {
+        "is_po_box_prohibited": true,
+        "po_box_prohibited_message": "We regret that this item cannot be shipped to PO Boxes."
+      },
+      "package_dimensions": {
+        "weight": "0.15",
+        "weight_unit_of_measure": "POUND",
+        "width": "5.27",
+        "depth": "1.0",
+        "height": "0.42"
+      },
+      "environmental_segmentation": {},
+      "manufacturer": {},
+      "product_classification": {
+        "product_type": "542",
+        "product_type_name": "ELECTRONICS",
+        "item_type_name": "Movies"
+      },
+      "product_brand": {},
+      "item_state": "READY_FOR_LAUNCH",
+      "specifications": [],
+      "attributes": {
+        "gift_wrapable": "N",
+        "has_prop65": "N",
+        "is_hazmat": "N",
+        "max_order_qty": 10,
+        "media_format": "Blu-ray",
+        "merch_class": "TCOM MOVIES",
+        "merch_subclass": 4,
+        "return_method": "This item can be returned to any Target store or Target.com."
+      },
+      "country_of_origin": "US",
+      "relationship_type_code": "Title Authority Child",
+      "subscription_eligible": false
+    },
+    "available_to_promise_network": {
+      "product_id": "51458582",
+      "id_type": "TCIN",
+      "available_to_promise_quantity": 10,
+      "online_available_to_promise_quantity": 10,
+      "availability_status": "IN_STOCK",
+      "availability": "AVAILABLE"
+    }
+  }
+}
