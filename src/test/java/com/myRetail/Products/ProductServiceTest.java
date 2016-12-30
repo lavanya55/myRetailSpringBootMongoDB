@@ -61,10 +61,36 @@ public class ProductServiceTest {
         when(productsRepository.findByProductId(anyInt())).thenReturn(productsDao);
         Products product = productService.findProductById(1234);
         assertThat(product.getName().equalsIgnoreCase("Some name"));
-        assertThat(product.getProductId()==1234);
+        assertThat(product.getProductId() == 1234);
         assertThat(product.getCurrentPrice().getValue().equalsIgnoreCase("12"));
         assertThat(product.getCurrentPrice().getCurrencyCode().equalsIgnoreCase("USD"));
     }
 
+    @Test(expected = DefaultException.class)
+    public void updateData_NoRecordTest() throws DefaultException {
+        when(productsRepository.findByProductId(anyInt())).thenReturn(null);
+        productService.updateProduct(new Products());
+    }
 
+    @Test
+    public void updateData_HappyPathTest() throws DefaultException {
+        ProductsDao productsDao = new ProductsDao();
+        CurrentPrice currentPrice = new CurrentPrice();
+        currentPrice.setValue("12");
+        currentPrice.setCurrencyCode("USD");
+        productsDao.setCurrentPrice(currentPrice);
+        productsDao.setProductId(1234);
+        when(productsRepository.findByProductId(anyInt())).thenReturn(productsDao);
+        ProductsDao productsDao1 = new ProductsDao();
+        CurrentPrice currentPrice1 = new CurrentPrice();
+        currentPrice1.setValue("400");
+        currentPrice1.setCurrencyCode("Rs");
+        productsDao1.setCurrentPrice(currentPrice1);
+        productsDao1.setProductId(1234);
+        when(productsRepository.save(productsDao)).thenReturn(productsDao1);
+
+        Products product = productService.updateProduct(new Products());
+        assertThat(product.getCurrentPrice().getValue().equals("400"));
+        assertThat(product.getCurrentPrice().getCurrencyCode().equals("Rs"));
+    }
 }

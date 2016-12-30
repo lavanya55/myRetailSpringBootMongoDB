@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductsRepository extends MongoRepository<ProductsDao, String> {
 	public ProductsDao findByProductId(@Param("productId") int productId);
+	public ProductsDao save(ProductsDao productDao);
 }

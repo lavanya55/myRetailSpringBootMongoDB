@@ -41,6 +41,20 @@ public class ProductService {
         return products;
     }
 
+
+
+
+    public Products updateProduct(Products changedProduct) throws DefaultException {
+        ProductsDao productsDao = this.productsRepository.findByProductId(changedProduct.getProductId());
+        if(productsDao==null){
+            throw new DefaultException(HttpStatus.NOT_FOUND,"Record not found");
+        }
+        productsDao.setCurrentPrice(changedProduct.getCurrentPrice());
+        ProductsDao updatedProductDao = this.productsRepository.save(productsDao);
+        return convertEntityToModel(updatedProductDao);
+
+    }
+
     private Products convertEntityToModel(ProductsDao productDao) {
         Products products;
         ModelMapper mapper = new ModelMapper();
@@ -48,4 +62,5 @@ public class ProductService {
 
         return products;
     }
+
 }
